@@ -9,15 +9,19 @@ playerOneScore.textContent = 0;
 playerTwoScore.textContent = 0;
 playerOneCurrentScore.textContent = 0;
 playerTwoCurrentScore.textContent = 0;
-diceEl.classList.add('.hidden');
+diceEl.classList.add('hidden');
 
-const rollDice = function () {
-  return Math.trunc(Math.random() * 6) + 1;
-};
+const btnNew = document.querySelector('.btn--new');
+const btnRoll = document.querySelector('.btn--roll');
+const btnHold = document.querySelector('.btn--hold');
+
+btnRoll.addEventListener('click', function () {
+  const dice = Math.trunc(Math.random() * 6) + 1;
+  diceEl.classList.remove('hidden');
+  switch (dice) {
+    case 1:
+      document.src;
+  }
+});
 
 console.log(rollDice());
-
-switch (rollDice) {
-  case 1:
-    document.src;
-}
