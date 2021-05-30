@@ -22,6 +22,9 @@ const closeModal = function () {
 // Call close modal on click
 closeModalBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
-document.addEventListener('keydown', function () {
-  closeModal();
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+  if (e.key === 'Escape') {
+    closeModal();
+  }
 });
