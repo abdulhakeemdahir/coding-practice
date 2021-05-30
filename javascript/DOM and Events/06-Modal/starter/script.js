@@ -12,13 +12,16 @@ const openModal = function () {
 // Loops through button and initiates action
 for (let i = 0; i < showModalBtn.length; i++) {
   showModalBtn[i].addEventListener('click', openModal);
+  console.log(i);
 }
 // Close Modal functionality
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
-
 // Call close modal on click
 closeModalBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', function () {
+  closeModal();
+});
