@@ -18,10 +18,7 @@ const btnHold = document.querySelector('.btn--hold');
 btnRoll.addEventListener('click', function () {
   const dice = Math.trunc(Math.random() * 6) + 1;
   diceEl.classList.remove('hidden');
-  switch (dice) {
-    case 1:
-      document.src;
-  }
+  diceEl.src = `dice-${dice}.png`;
 });
 
 console.log(rollDice());
