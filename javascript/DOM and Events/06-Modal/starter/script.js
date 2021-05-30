@@ -12,7 +12,6 @@ const openModal = function () {
 // Loops through button and initiates action
 for (let i = 0; i < showModalBtn.length; i++) {
   showModalBtn[i].addEventListener('click', openModal);
-  console.log(i);
 }
 // Close Modal functionality
 const closeModal = function () {
@@ -23,7 +22,6 @@ const closeModal = function () {
 closeModalBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', function (e) {
-  console.log(e);
   if (e.key === 'Escape') {
     if (!modal.classList.contains('hidden')) {
       closeModal();
