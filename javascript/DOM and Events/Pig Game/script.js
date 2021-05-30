@@ -8,3 +8,9 @@ let playerOneCurrentScore = (document.querySelector(
 let playerTwoCurrentScore = (document.querySelector(
   '#current--1'
 ).textContent = 17);
+
+const rollDice = function () {
+  return Math.trunc(Math.random() * 6) + 1;
+};
+
+console.log(rollDice());
