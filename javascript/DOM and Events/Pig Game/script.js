@@ -44,7 +44,7 @@ btnHold.addEventListener('click', function () {
     scores[activePlayer];
 
   // Check if player is over 100 points
-  if (scores[activePlayer] > 100) {
+  if (scores[activePlayer] >= 100) {
     currentScore = 0;
     document
       .querySelector(`.player--${activePlayer}`)
@@ -65,4 +65,10 @@ btnNew.addEventListener('click', function () {
 
   scores = [0, 0];
   currentScore = 0;
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add('player--active');
 });
