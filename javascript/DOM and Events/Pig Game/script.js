@@ -20,6 +20,14 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+const switchPlayer = function () {
+  document.querySelector(`#current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  currentScore = 0;
+  playerOne.classList.toggle('player--active');
+  playerTwo.classList.toggle('player--active');
+};
+
 btnRoll.addEventListener('click', function () {
   const dice = Number(Math.trunc(Math.random() * 6) + 1);
   diceEl.classList.remove('hidden');
@@ -29,13 +37,7 @@ btnRoll.addEventListener('click', function () {
     document.querySelector(`#current--${activePlayer}`).textContent =
       currentScore;
   } else {
-    document.querySelector(`#current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    currentScore = 0;
-    playerOne.classList.toggle('player--active');
-    playerTwo.classList.toggle('player--active');
-
-    // playerTwo.classList.add('player--active');
+    switchPlayer();
   }
 });
 
@@ -43,6 +45,9 @@ btnHold.addEventListener('click', function () {
   scores[activePlayer] += currentScore;
   document.querySelector(`#score--${activePlayer}`).textContent =
     scores[activePlayer];
+
+  // Switch player
+  switchPlayer();
 });
 
 console.log('Start Game');
