@@ -46,7 +46,6 @@ btnHold.addEventListener('click', function () {
     scores[activePlayer] += currentScore;
     document.querySelector(`#score--${activePlayer}`).textContent =
       scores[activePlayer];
-
     // Check if player is over 100 points
     if (scores[activePlayer] >= 100) {
       playing = false;
