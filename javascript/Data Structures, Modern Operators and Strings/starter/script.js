@@ -11,6 +11,12 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,36 +33,73 @@ const restaurant = {
   },
 };
 
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+// Destructuring Objects
+const { name, categories, openingHours } = restaurant;
+console.table(name, categories, openingHours);
+
+// Re-name objects properties
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Setting default value for Object destructuring
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating object variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested object destructuring
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+//--------------------------------------------------------//
+
 // Destructuring arrays
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-const [x, y, z] = arr;
-console.log(x, y, z);
+// const [x, y, z] = arr;
+// console.log(x, y, z);
 
-let [main, secondary] = restaurant.categories;
-console.log(main, secondary);
+// let [main, secondary] = restaurant.categories;
+// console.log(main, secondary);
 
-// How you would do switch items before ES6
-const temp = main;
-main = secondary;
-secondary = temp;
+// // How you would do switch items before ES6
+// const temp = main;
+// main = secondary;
+// secondary = temp;
 
-// How you can use ES6 destructuring to switch variables
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// // How you can use ES6 destructuring to switch variables
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
-// receive 2 return values from a function
-console.table(restaurant.order(2, 0));
-const [starterCourse, mainCourse] = restaurant.order(2, 0);
-console.table(starterCourse, mainCourse);
+// // receive 2 return values from a function
+// console.table(restaurant.order(2, 0));
+// const [starterCourse, mainCourse] = restaurant.order(2, 0);
+// console.table(starterCourse, mainCourse);
 
-// Nested array destructuring
-const nested = [2, 4, [5, 6]];
-const [i, , j] = nested;
-const [k, , [q, u]] = nested;
+// // Nested array destructuring
+// const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// const [k, , [q, u]] = nested;
 
-// Default values
-const [p = 1, q = 1, r = 1] = [8, 9];
+// // Default values
+// const [p = 1, o = 1, r = 1] = [8, 9];
