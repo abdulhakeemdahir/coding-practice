@@ -44,6 +44,16 @@ const restaurant = {
   },
 };
 
+//Rest is on the left hand side, spread on the right hand of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
 // restaurant.orderDelivery({
 //   time: '22:30',
 //   address: 'Via del Sole, 21',
@@ -62,14 +72,14 @@ const restaurant = {
 // restaurant.orderPasta(...ingredients);
 
 // Spread works on Objects
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
 
-console.log(newRestaurant);
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorante Roma';
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
 
-console.log(restaurantCopy);
+// console.log(restaurantCopy);
 
 // // Spread operator
 // const arr = [7, 8, 9];
@@ -85,18 +95,18 @@ console.log(restaurantCopy);
 // Use case of spread operator: create shallow copy of array and merge arrays
 
 //Copy arrays
-const mainMenuCopy = [...restaurant.mainMenu];
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-//Join two arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// //Join two arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
-console.log(menu);
+// console.log(menu);
 
-//Iterables can be used with spread
-const str = 'Jonas';
-const letters = [...str, ' ', 's.'];
+// //Iterables can be used with spread
+// const str = 'Jonas';
+// const letters = [...str, ' ', 's.'];
 
-console.log(letters);
+// console.log(letters);
 
 //
 
