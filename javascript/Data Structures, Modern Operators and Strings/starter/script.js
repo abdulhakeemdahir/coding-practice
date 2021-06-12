@@ -4,15 +4,15 @@
 const weekdays = ['mon', 'tues', 'thur', 'fri', 'sat', 'sun'];
 
 const openingHours = {
-  [weekdays[3]]: {
+  [weekdays[2]]: {
     open: 12,
     close: 22,
   },
-  [weekdays[4]]: {
+  [weekdays[3]]: {
     open: 11,
     close: 23,
   },
-  [weekdays[5]]: {
+  [weekdays[4]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -42,6 +42,33 @@ const restaurant = {
   },
   openingHours,
 };
+//Optional Chaining
+// console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tues', 'thur', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  // console.log(open);
+
+  console.log(
+    `On ${day}, we are ${open !== 'closed' ? `open at ${open}` : open}`
+  );
+}
+
+// Methods
+console.log(restaurant.order?.(1, 2) ?? 'Method does not exist');
+
+// Arrays
+const users = [
+  {
+    name: 'Jonas',
+    email: 'jonas@jonas.io',
+  },
+];
+
+console.log(users[0]?.name ?? 'User array is empty');
 
 // For of Loop
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
