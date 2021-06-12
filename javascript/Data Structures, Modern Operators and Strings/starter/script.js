@@ -27,32 +27,24 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
 };
 
-//Rest is on the left hand side, spread on the right hand of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// For of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+for (const item of menu) console.log(item);
+for (const item of menu.entries()) console.log(`${item[0] + 1}: ${item[1]} `);
+for (const [i, el] of menu.entries()) console.log(`${i + 1}: ${el} `);
+
+//Rest is on the left hand side, spread on the right hand of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
 // restaurant.orderDelivery({
 //   time: '22:30',
@@ -137,7 +129,7 @@ console.log(pizza, risotto, otherFood);
 // const {
 //   fri: { open: o, close: c },
 // } = openingHours;
-console.log(o, c);
+// console.log(o, c);
 //--------------------------------------------------------//
 
 // Destructuring arrays
