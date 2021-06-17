@@ -1,25 +1,27 @@
-'use strict';
-// const bookingArr = [];
-// const createBooking = function (
-//   flightNum,
-//   numPassengers = 1,
-//   price = 199 * numPassengers
-// ) {
-//   //ES5
-//   //   numPassengers = numPassengers || 1;
-//   //   price = price || 199;
-//   const booking = {
-//     flightNum,
-//     numPassengers,
-//     price,
-//   };
-//   console.log(booking);
-//   bookingArr.push(booking);
-// };
+"use strict";
+// Default parameters
 
-// createBooking('LH123');
-// createBooking('LH123', 2);
-// createBooking('LH123', undefined, 2);
+const bookingArr = [];
+const createBooking = function (
+	flightNum,
+	numPassengers = 1,
+	price = 199 * numPassengers
+) {
+	//ES5
+	//   numPassengers = numPassengers || 1;
+	//   price = price || 199;
+	const booking = {
+		flightNum,
+		numPassengers,
+		price,
+	};
+	console.log(booking);
+	bookingArr.push(booking);
+};
+
+createBooking("LH123");
+createBooking("LH123", 2);
+createBooking("LH123", undefined, 2);
 
 // Passing Arguments
 
@@ -69,12 +71,12 @@
 
 // transformer('JavaScript is the best!', upperFirstWord);
 
-const greet = greeting => name => console.log(`${greeting} ${name}`);
+// const greet = greeting => name => console.log(`${greeting} ${name}`);
 
-const greeterHey = greet('Hey');
+// const greeterHey = greet("Hey");
 
-console.log(greeterHey);
+// console.log(greeterHey);
 
-greeterHey('Abdul');
+// greeterHey("Abdul");
 
-greet('Hello')('Abdul');
+// greet("Hello")("Abdul");
